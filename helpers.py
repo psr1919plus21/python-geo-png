@@ -12,7 +12,6 @@ def scale_array_with_range(array, range_min, range_max):
     scaled_array = []
     for item in array:
         scaled_array.append(fit_range(item, data_min, data_max, range_min, range_max))
-
     return scaled_array
 
 def fit_range(x, data_min, data_max, range_min, range_max):
@@ -23,7 +22,7 @@ def create_marker(cluster, map, cluster_radius, threshold):
     """Create circle marker on the map"""
     if(int(cluster['users']) <= threshold):
         return
-        
+
     print('create at ' + str(datetime.datetime.now().time()))
     folium.CircleMarker(
        location = [float(cluster['lat']), float(cluster['lon'])],

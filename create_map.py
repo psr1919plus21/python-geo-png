@@ -7,11 +7,9 @@ from helpers import save_as_png
 from helpers import create_marker
 from helpers import scale_array_with_range
 
-
 start_time = str(datetime.datetime.now().time())
-map = folium.Map(location=[20,0], tiles="Mapbox Bright", zoom_start=2)
-
 users_geo = json.load(open('users-geo.json'))
+map = folium.Map(location=[20,0], tiles="Mapbox Bright", zoom_start=2)
 
 cluster_radiuses = []
 for user_cluster in users_geo:
